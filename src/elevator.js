@@ -73,6 +73,7 @@ function removeAdjacentDuplicates(array) {
 module.exports = {
   askCurrentFloor,
   removeAdjacentDuplicates,
+  askDestinationFloors
 };
 
 async function main() {
