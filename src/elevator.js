@@ -60,14 +60,20 @@ function askDestinationFloors() {
   });
 }
 
+function removeAdjacentDuplicates(array) {
+  return array.filter((val, index) => val !== array[index + 1]);
+}
+
+
 async function main() {
   const currentFloor = await askCurrentFloor();
   const destinationFloors = await askDestinationFloors();
+  const destinationFloorsWithDuplicateValuesRemoved = removeAdjacentDuplicates(destinationFloors);
 
   // calculate the differences in each value of the list of floors. 
   // This determines how many floors were passed during travel time. 
   // We push these values into an array which we will later use
-  const differences = destinationFloors.reduce((acc, curr, index, arr) => {
+  const differences = destinationFloorsWithDuplicateValuesRemoved.reduce((acc, curr, index, arr) => {
     // if it's the first value in the list, we subtract the current floor with the intial floor in the list
     if (index === 0) {
       acc.push(Math.abs(currentFloor - arr[index]));
@@ -89,12 +95,12 @@ async function main() {
 
   // if the initial floor is equal to the list of floors traveled to, then it is omitted from the list of floors traveled to because it is redundant
   // otherwise, add the initial floor to the list of floors traveled to 
-  if (currentFloor != destinationFloors[0]) {
-    destinationFloors.unshift(currentFloor);
+  if (currentFloor != destinationFloorsWithDuplicateValuesRemoved[0]) {
+    destinationFloorsWithDuplicateValuesRemoved.unshift(currentFloor);
   }
 
   console.log("Total travel time:", totalTravelTime);
-  console.log("Floors visited in order:", destinationFloors);
+  console.log("Floors visited in order:", destinationFloorsWithDuplicateValuesRemoved);
   rl.close();
 }
 
