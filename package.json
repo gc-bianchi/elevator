@@ -1,0 +1,13 @@
+{
+  "name": "elevator",
+  "version": "1.0.0",
+  "description": "A simple elevator simulation",
+  "scripts": {
+    "test": "jest --runInBand --detectOpenHandles --forceExit"
+  },
+  "jest": {
+    "testMatch": [
+      "**/__tests__/**/*.js"
+    ]
+  }
+}
