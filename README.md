@@ -11,6 +11,7 @@
 - List of floors to visit must have at least one value
 - List of floors must all be integers greater than 0
 - List of floors cannot have a value greater than max number of floors
+- There is no elevator movement if list of floors to visit contain duplicate values that are adjacent to each other
 
 # Features that weren’t implemented
 - I wanted to prompt the user to set the max number of floors, but that wasn't part of the directions so I decided against that

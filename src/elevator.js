@@ -60,6 +60,8 @@ function askDestinationFloors() {
   });
 }
 
+// function to remove duplicate values if they are adjacent to each other in the list
+// because there would be no movement between these values
 function removeAdjacentDuplicates(array) {
   return array.filter((val, index) => val !== array[index + 1]);
 }
