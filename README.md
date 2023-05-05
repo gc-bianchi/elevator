@@ -4,6 +4,13 @@
 - Outputs: [total travel time, floors visited in order] (e.g 560 12,2,9,1,32)
 - Program Constants: Single floor travel time: 10
 
+# How to run the Elevator Program
+- Open a terminal or command prompt.
+- Navigate to the directory where the elevator.js file is located using the cd command.
+- Run the command node elevator.js.
+- Follow the prompts displayed in the terminal to use the program.
+- Note: You will need to have Node.js installed on your machine in order to run this program. If you don't have Node.js installed, you can download it from the official website: https://nodejs.org/en/download/
+
 # Assumptions
 - Max number of floors is 163, which is the number of floors in the tallest building in the world currently (Burj Khalifa)
 - Base floor is 0
